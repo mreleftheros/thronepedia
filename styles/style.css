@@ -13,4 +13,19 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
+}
+
+.header {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cea7a7;
+}
+.header__title {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  padding: 0 4rem 2rem;
+  border-bottom: solid #000;
 }/*# sourceMappingURL=style.css.map */
