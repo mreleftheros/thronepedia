@@ -1,4 +1,22 @@
 
+
+const updateCardsUI = characters => {
+  const cardsList = document.getElementById("cardsList");
+  const fragment = new DocumentFragment();
+
+  characters.forEach(character => {
+    // create card
+    const cardElement = document.createElement("li");
+    cardElement.classList.add("main__wrapper__cards__card");
+    cardElement.innerHTML = character.fullName;
+
+    fragment.appendChild(cardElement);
+  })
+
+  cardsList.appendChild(fragment);
+};
+
+// async function that fetches thrones api and returns characters data
 const fetchCharacters = async () => {
   const url = "https://thronesapi.com/api/v2/Characters";
 
@@ -6,9 +24,10 @@ const fetchCharacters = async () => {
   
   if (!response.ok) throw new Error("Could not fetch data..."); // simple check
 
-  const data = await response.json();
+  const characters = await response.json();
 
-  console.log(data)
+  return updateCardsUI(characters);
 };
 
-fetchCharacters()
+// events
+window.addEventListener("DOMContentLoaded", fetchCharacters);
