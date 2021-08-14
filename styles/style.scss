@@ -8,10 +8,22 @@
   background: rgb(206, 167, 167);
 
   &__title {
+    min-width: 20rem;
     font-size: 4rem;
     color: #fff;
     text-shadow: 1px 1px 3px #000;
-    padding:0 4rem 2rem;
-    border-bottom: solid #000;
+    padding: 0 2rem 1rem;
+    box-shadow: 0 .5rem 2rem rgb(172, 140, 140);
+    border-radius: .5rem;
+    text-align: center;
+
+    &::first-letter {
+      font-size: 6rem;
+    }
   }
+}
+
+.main {
+  min-height: 80vh;
+  background: rgb(137, 137, 197);
 }
