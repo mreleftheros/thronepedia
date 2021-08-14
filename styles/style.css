@@ -39,4 +39,31 @@ body {
 .main {
   min-height: 80vh;
   background: #8989c5;
+}
+.main__wrapper {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.main__wrapper__search {
+  width: 100%;
+  margin-top: 1rem;
+}
+.main__wrapper__search__input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  border-radius: 1rem;
+  outline: none;
+  box-shadow: 0 0.5rem 1rem #864586;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 2rem;
+}
+.main__wrapper__search__input:focus {
+  background: #ac59ac;
 }/*# sourceMappingURL=style.css.map */
