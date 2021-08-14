@@ -12,7 +12,7 @@ const updateCardsUI = characters => {
     <h2 class="main__wrapper__cards__card__name">${character.fullName}</h2>
     <span class="main__wrapper__cards__card__title">${character.title}</span>
     <div class="main__wrapper__cards__card__img-container">
-      <img class="main__wrapper__cards__card__img-container__img" src=${character.imageUrl}>
+      <img width="200" height="200" class="main__wrapper__cards__card__img-container__img" src=${character.imageUrl}>
     </div>
     `;
     cardElement.innerHTML = cardHtml;
