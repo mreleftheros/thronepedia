@@ -59,16 +59,16 @@
     }
 
     &__cards {
-      margin-top: 1rem;
+      margin-top: 4rem;
       display: grid;
-      grid-gap: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      grid-gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 
       &__card {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 40rem;
+        height: 35rem;
         box-shadow: .5rem .5rem 1rem rgb(255, 203, 212);
 
         &__name {
@@ -78,9 +78,7 @@
           align-items: center;
           flex: 1;
           font-size: 2.5rem;
-          letter-spacing: .1rem;
-          color: #fff;
-          text-shadow: 1px 1px 3px #000;
+          color: #000;
         }
         
         &__title {
@@ -91,6 +89,8 @@
           font-size: 2rem;
           text-align: center;
           font-weight: bold;
+          color: #fff;
+          text-shadow: 1px 1px 3px #000;
         }
 
         &__img-container {

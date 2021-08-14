@@ -69,16 +69,16 @@ body {
   background: #ac59ac;
 }
 .main__wrapper__cards {
-  margin-top: 1rem;
+  margin-top: 4rem;
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
 .main__wrapper__cards__card {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 40rem;
+  height: 35rem;
   box-shadow: 0.5rem 0.5rem 1rem #ffcbd4;
 }
 .main__wrapper__cards__card__name {
@@ -88,9 +88,7 @@ body {
   align-items: center;
   flex: 1;
   font-size: 2.5rem;
-  letter-spacing: 0.1rem;
-  color: #fff;
-  text-shadow: 1px 1px 3px #000;
+  color: #000;
 }
 .main__wrapper__cards__card__title {
   display: flex;
@@ -100,6 +98,8 @@ body {
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
 }
 .main__wrapper__cards__card__img-container {
   flex: 1;
