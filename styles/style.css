@@ -66,4 +66,14 @@ body {
 }
 .main__wrapper__search__input:focus {
   background: #ac59ac;
+}
+.main__wrapper__cards {
+  display: grid;
+  grid-template-columns: repeat 1, 1fr;
+}
+.main__wrapper__cards__card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }/*# sourceMappingURL=style.css.map */
