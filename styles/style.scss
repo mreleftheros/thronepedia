@@ -63,10 +63,13 @@
       grid-template-columns: repeat (1, 1fr);
 
       &__card {
-        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
+        img {
+          max-width: 100%;
+        }
       }
     }
   }
