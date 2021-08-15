@@ -1,12 +1,22 @@
 const searchInput = document.getElementById("searchInput");
+const resultsMessage = document.getElementById("resultsMessage");
+
+// function that takes totalResults number and outputs it in the DOM
+const createResultsMessageUI = results => {
+  let message = results > 0 ? `${results} characters found.` : "0 results found.";
+
+  resultsMessage.innerHTML = `<p class="main__wrapper__results__message>${message}</p>`;
+};
 
 // function that takes an array of characters and update each one with a card in the DOM
 const updateCardsUI = (characters, value) => {
+  if (!value) value = "";
   value = value.toLowerCase();
   const cardsList = document.getElementById("cardsList");
   cardsList.innerHTML = "";
   const fragment = new DocumentFragment();
   const len = value.length;
+  let totalResults = 0;
   
   characters.forEach(character => {
     const name = character.fullName.toLowerCase();
@@ -15,6 +25,8 @@ const updateCardsUI = (characters, value) => {
     if (len > 0) {
       if (name.indexOf(value) === -1 && title.indexOf(value) === -1) return;
     }
+
+    totalResults++;
 
     // create card template
     const cardElement = document.createElement("li");
@@ -30,6 +42,8 @@ const updateCardsUI = (characters, value) => {
 
     fragment.appendChild(cardElement);
   })
+
+  createResultsMessageUI(totalResults);
 
   cardsList.appendChild(fragment);
 };

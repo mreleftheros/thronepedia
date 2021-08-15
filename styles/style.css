@@ -47,6 +47,17 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.main__wrapper__results {
+  min-height: 10rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__wrapper__results__message {
+  font-size: 2rem;
+  font-style: italic;
+}
 .main__wrapper__search {
   width: 100%;
   margin-top: 1rem;

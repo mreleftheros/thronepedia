@@ -34,6 +34,19 @@
     flex-direction: column;
     justify-content: center;
 
+    &__results {
+      min-height: 10rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__message {
+        font-size: 2rem;
+        font-style: italic;
+      }
+    }
+
     &__search {
       width: 100%;
       margin-top: 1rem;
