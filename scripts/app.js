@@ -52,7 +52,7 @@ const updateCardsUI = (characters, value) => {
 // async function that fetches thrones api and returns characters data
 const fetchCharacters = async e => {
   const url = "https://thronesapi.com/api/v2/Characters";
-  const searchValue = e.target.value;
+  const searchValue = searchInput.value;
 
   // check if user typed anything to show or not reset button in the DOM
   if (searchValue.length > 0) {
@@ -70,7 +70,12 @@ const fetchCharacters = async e => {
   return updateCardsUI(characters, searchValue);
 };
 
+// function that takes searchInput value and makes it an empty string
+const resetSearchInput = () => {
+  searchInput.value = "";
+};
+
 // events
 window.addEventListener("DOMContentLoaded", fetchCharacters);
 searchInput.addEventListener("input", fetchCharacters);
-searchReset.addEventListener("click", )
+searchReset.addEventListener("click", resetSearchInput);
