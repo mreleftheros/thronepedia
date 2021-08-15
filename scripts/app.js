@@ -3,9 +3,9 @@ const resultsMessage = document.getElementById("resultsMessage");
 
 // function that takes totalResults number and outputs it in the DOM
 const createResultsMessageUI = results => {
-  let message = results > 0 ? `${results} characters found.` : "0 results found.";
+  let message = results > 0 ? `${results} results found.` : "0 results found.";
 
-  resultsMessage.innerHTML = `<p class="main__wrapper__results__message>${message}</p>`;
+  resultsMessage.innerHTML = `<p class="main__wrapper__results__message">${message}</p>`;
 };
 
 // function that takes an array of characters and update each one with a card in the DOM
@@ -44,7 +44,7 @@ const updateCardsUI = (characters, value) => {
   })
 
   createResultsMessageUI(totalResults);
-
+  
   cardsList.appendChild(fragment);
 };
 

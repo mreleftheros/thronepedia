@@ -48,7 +48,8 @@ body {
   justify-content: center;
 }
 .main__wrapper__results {
-  min-height: 10rem;
+  margin: 2rem 0 2rem;
+  min-height: 5rem;
   text-align: center;
   display: flex;
   justify-content: center;
