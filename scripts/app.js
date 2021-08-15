@@ -1,5 +1,6 @@
 const searchInput = document.getElementById("searchInput");
 const resultsMessage = document.getElementById("resultsMessage");
+const searchReset = document.getElementById("searchReset");
 
 // function that takes totalResults number and outputs it in the DOM
 const createResultsMessageUI = results => {
@@ -53,6 +54,13 @@ const fetchCharacters = async e => {
   const url = "https://thronesapi.com/api/v2/Characters";
   const searchValue = e.target.value;
 
+  // check if user typed anything to show or not reset button in the DOM
+  if (searchValue.length > 0) {
+    searchReset.classList.add("show")
+  } else {
+    searchReset.classList.remove("show");
+  }
+
   const response = await fetch(url);
   
   if (!response.ok) throw new Error("Could not fetch data..."); // simple check
@@ -65,3 +73,4 @@ const fetchCharacters = async e => {
 // events
 window.addEventListener("DOMContentLoaded", fetchCharacters);
 searchInput.addEventListener("input", fetchCharacters);
+searchReset.addEventListener("click", )
