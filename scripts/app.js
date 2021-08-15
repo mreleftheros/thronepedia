@@ -6,7 +6,7 @@ const searchReset = document.getElementById("searchReset");
 const createResultsMessageUI = results => {
   let message = results > 0 ? `${results} results were found.` : "Sorry! No results were found.";
 
-  resultsMessage.innerHTML = `<p class="main__wrapper__results__message">${message}</p>`;
+  resultsMessage.innerHTML = message;
 };
 
 // function that takes an array of characters and update each one with a card in the DOM
@@ -42,8 +42,9 @@ const updateCardsUI = (characters, value) => {
     cardElement.innerHTML = cardHtml;
 
     fragment.appendChild(cardElement);
-  })
 
+  })
+  
   createResultsMessageUI(totalResults);
   
   cardsList.appendChild(fragment);
@@ -51,6 +52,7 @@ const updateCardsUI = (characters, value) => {
 
 // async function that fetches thrones api and returns characters data
 const fetchCharacters = async e => {
+  resultsMessage.innerHTML = "Searching..."
   const url = "https://thronesapi.com/api/v2/Characters";
   const searchValue = searchInput.value;
 
