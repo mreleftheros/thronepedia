@@ -1,10 +1,21 @@
+const searchInput = document.getElementById("searchInput");
+
 // function that takes an array of characters and update each one with a card in the DOM
-const updateCardsUI = characters => {
+const updateCardsUI = (characters, value) => {
+  value = value.toLowerCase();
   const cardsList = document.getElementById("cardsList");
   cardsList.innerHTML = "";
   const fragment = new DocumentFragment();
-
+  const len = value.length;
+  
   characters.forEach(character => {
+    const name = character.fullName.toLowerCase();
+    const title = character.title.toLowerCase();
+
+    if (len > 0) {
+      if (name.indexOf(value) === -1 && title.indexOf(value) === -1) return;
+    }
+
     // create card template
     const cardElement = document.createElement("li");
     cardElement.classList.add("main__wrapper__cards__card");
@@ -24,8 +35,9 @@ const updateCardsUI = characters => {
 };
 
 // async function that fetches thrones api and returns characters data
-const fetchCharacters = async () => {
+const fetchCharacters = async e => {
   const url = "https://thronesapi.com/api/v2/Characters";
+  const searchValue = e.target.value;
 
   const response = await fetch(url);
   
@@ -33,8 +45,9 @@ const fetchCharacters = async () => {
 
   const characters = await response.json();
 
-  return updateCardsUI(characters);
+  return updateCardsUI(characters, searchValue);
 };
 
 // events
 window.addEventListener("DOMContentLoaded", fetchCharacters);
+searchInput.addEventListener("input", fetchCharacters);
