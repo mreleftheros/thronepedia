@@ -51,10 +51,10 @@ const updateCardsUI = (characters, value) => {
 };
 
 // async function that fetches thrones api and returns characters data
-const fetchCharacters = async e => {
-  resultsMessage.innerHTML = "Searching..."
+const fetchCharacters = async () => {
   const url = "https://thronesapi.com/api/v2/Characters";
   const searchValue = searchInput.value;
+  resultsMessage.innerHTML = "Searching...";
 
   // check if user typed anything to show or not reset button in the DOM
   if (searchValue.length > 0) {
@@ -63,13 +63,19 @@ const fetchCharacters = async e => {
     searchReset.classList.remove("show");
   }
 
-  const response = await fetch(url);
+  // error handling
+  try {
+    const response = await fetch(url);
+    
+    if (!response.ok) throw new Error(`Error! Could not fetch the data.`);
   
-  if (!response.ok) throw new Error("Could not fetch data..."); // simple check
-
-  const characters = await response.json();
-
-  return updateCardsUI(characters, searchValue);
+    const characters = await response.json();
+  
+    return updateCardsUI(characters, searchValue);
+  }
+  catch(err) {
+    resultsMessage.innerHTML = "Error! Could not fetch the data. Try refreshing your browser...";
+  }
 };
 
 // function that takes searchInput value and makes it an empty string
