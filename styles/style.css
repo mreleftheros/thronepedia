@@ -60,8 +60,27 @@ body {
   font-style: italic;
 }
 .main__wrapper__search {
-  width: 100%;
   margin-top: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.main__wrapper__search__reset.show {
+  display: block;
+}
+.main__wrapper__search__reset {
+  display: none;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  font-weight: bold;
+  position: absolute;
+  right: 1%;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.main__wrapper__search__reset:hover {
+  color: #d86c82;
 }
 .main__wrapper__search__input {
   display: block;
@@ -83,7 +102,7 @@ body {
 .main__wrapper__cards {
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 }
 .main__wrapper__cards__card {
   display: flex;

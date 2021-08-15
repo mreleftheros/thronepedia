@@ -49,8 +49,30 @@
     }
 
     &__search {
-      width: 100%;
       margin-top: 1rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &__reset.show {
+        display: block;
+      }
+
+      &__reset {
+        display: none;
+        color: #fff;
+        text-shadow: 1px 1px 3px #000;
+        font-weight: bold;
+        position: absolute;
+        right: 1%;
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: all .3s ease;
+
+        &:hover {
+          color: #d86c82;
+        }
+      }
 
       &__input {
         display: block;
@@ -75,7 +97,7 @@
     &__cards {
       display: grid;
       grid-gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 
       &__card {
         display: flex;
