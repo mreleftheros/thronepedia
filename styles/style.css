@@ -81,7 +81,6 @@ body {
   background: #ac59ac;
 }
 .main__wrapper__cards {
-  margin-top: 4rem;
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
