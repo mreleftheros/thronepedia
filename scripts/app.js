@@ -3,7 +3,7 @@ const resultsMessage = document.getElementById("resultsMessage");
 
 // function that takes totalResults number and outputs it in the DOM
 const createResultsMessageUI = results => {
-  let message = results > 0 ? `${results} results found.` : "0 results found.";
+  let message = results > 0 ? `${results} results were found.` : "Sorry! No results were found.";
 
   resultsMessage.innerHTML = `<p class="main__wrapper__results__message">${message}</p>`;
 };
