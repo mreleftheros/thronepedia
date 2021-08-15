@@ -73,6 +73,8 @@ const fetchCharacters = async e => {
 // function that takes searchInput value and makes it an empty string
 const resetSearchInput = () => {
   searchInput.value = "";
+
+  fetchCharacters();
 };
 
 // events
